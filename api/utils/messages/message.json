@@ -1,0 +1,124 @@
+{
+	"es": {
+		"LOGIN_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Ingreso de usuarios",
+			"DESCRIPTION": "Error al realizar el ingreso en la aplicación."
+		},
+		"LOGIN_NOT_EXIST": {
+			"TYPE": "error",
+			"TITLE": "Ingreso de usuarios",
+			"DESCRIPTION": "Los datos de acceso son incorrectos."
+		},
+		"LOGIN_INACTIVE": {
+			"TYPE": "error",
+			"TITLE": "Ingreso de usuarios",
+			"DESCRIPTION": "El usuario está inactivo, por favor consulte con el administrador."
+		},
+		"PASSWORD_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Cambio de contraseña",
+			"DESCRIPTION": "Se presentó un error al cambiar la contraseña."
+		},
+		"CHANGE_PASSWORD_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Cambio de contraseña",
+			"DESCRIPTION": "La contraseña actual es incorrecta."
+		},
+		"AUTH_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Acceso restringido",
+			"DESCRIPTION": "El usuario no está registrado en el sistema."
+		},
+		"AUTH_EXPIRED": {
+			"TYPE": "error",
+			"TITLE": "Sesión vencida",
+			"DESCRIPTION": "La sesión del usuario está vencida, por favor ingrese de nuevo."
+		},
+		"CREATE": {
+			"TYPE": "success",
+			"TITLE": "Registro creado",
+			"DESCRIPTION": "El registro se ha creado con éxito."
+		},
+		"CREATE_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error creación",
+			"DESCRIPTION": "Error al crear el registro."
+		},
+		"UPDATE": {
+			"TYPE": "success",
+			"TITLE": "Registro actualizado",
+			"DESCRIPTION": "El registro se ha actualizado con éxito."
+		},
+		"UPDATE_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error actualización",
+			"DESCRIPTION": "Error al actualizar el registro."
+		},
+		"DELETE": {
+			"TYPE": "success",
+			"TITLE": "Registro eliminado",
+			"DESCRIPTION": "El registro se ha eliminado con éxito."
+		},
+		"DELETE_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error eliminar",
+			"DESCRIPTION": "Error al eliminar el registro."
+		},
+		"INACTIVATE": {
+			"TYPE": "success",
+			"TITLE": "Registro inactivado",
+			"DESCRIPTION": "El registro se ha inactivado con éxito."
+		},
+		"INACTIVATE_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error",
+			"DESCRIPTION": "Error al inactivar el registro."
+		},
+		"INVALID_ID": {
+			"TYPE": "error",
+			"TITLE": "Error de Identificador",
+			"DESCRIPTION": "El identificador del registro no es correcto."
+		},
+		"NOT_EXIST": {
+			"TYPE": "error",
+			"TITLE": "Verificar registro",
+			"DESCRIPTION": "El registro solicitado no existe en el sistema."
+		},
+		"DATA_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error listado",
+			"DESCRIPTION": "Error al listar los registros."
+		},
+		"ONE_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error registro",
+			"DESCRIPTION": "Error al consultar el registro."
+		},
+		"LIST_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error",
+			"DESCRIPTION": "Error al listar los registros."
+		},
+		"QUERY_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error de consulta",
+			"DESCRIPTION": "Error al realizar la consulta establecida."
+		},
+		"FILE_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error de archivo",
+			"DESCRIPTION": "Se presentó un error al subir el archivo."
+		},
+		"FILE_EXTENSION_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error de archivo",
+			"DESCRIPTION": "La extensión del archivo no es válida."
+		},
+		"DB_CONNECTION_ERROR": {
+			"TYPE": "error",
+			"TITLE": "Error de conexión con la base de datos",
+			"DESCRIPTION": "Error de conexión con la base de datos."
+		}
+	}
+}

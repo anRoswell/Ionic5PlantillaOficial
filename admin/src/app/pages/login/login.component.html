@@ -1,0 +1,69 @@
+<main class="container py-5">
+  <section class="row justify-content-sm-center">
+    <article class="col-sm-8 col-md-6 col-lg-4">
+      <div class="card mt-5 mb-2 border border-white shadow">
+        <img
+          src="./../../../assets/img/logo.png"
+          class="card-img-top"
+          width="40"
+          height="120"
+          alt="logo Aseo Capital Panamá"
+        />
+        <div class="card-body">
+          <form
+            [formGroup]="formLogin"
+            class="pb-2 px-2"
+            autocomplete="off"
+            novalidate
+          >
+            <div class="form-group">
+              <label for="usrEmail">Usuario:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="usrEmail"
+                maxlength="20"
+                placeholder="Usuario"
+                formControlName="usrEmail"
+              />
+              <ng-container *ngIf="isInvalid('usrEmail')">
+                <small class="form-text text-danger">
+                  Este usuario es requerido
+                </small>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="usrPassword">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="usrPassword"
+                maxlength="8"
+                placeholder="Contraseña"
+                formControlName="usrPassword"
+              />
+              <ng-container *ngIf="isInvalid('usrPassword')">
+                <small class="form-text text-danger">
+                  La contraseña es requerida
+                </small>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="login()"
+                [disabled]="formLogin.invalid"
+              >
+                Ingresar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <ng-container *ngIf="error">
+        <div class="alert alert-danger" role="alert">{{ error.message }}</div>
+      </ng-container>
+    </article>
+  </section>
+</main>

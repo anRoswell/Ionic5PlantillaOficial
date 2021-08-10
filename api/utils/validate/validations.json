@@ -1,0 +1,75 @@
+{
+	"auth": {
+		"allowed": ["usr_email", "usr_password"],
+		"required": {
+			"usr_email": "Email",
+			"usr_password": "Contraseña"
+		}
+	},
+	"users": {
+		"allowed": [
+			"usr_nameComplete",
+			"usr_cedula",
+			"usr_nroCelular",
+			"usr_telefonoFijo",
+			"usr_email",
+			"usr_password",
+			"usr_direccion",
+			"usr_terminosCondiciones",
+			"identificationTypeId"
+		],
+		"required": {
+			"usr_nameComplete": "Nombre completo",
+			"usr_cedula": "Cedula",
+			"usr_nroCelular": "Celular",
+			"usr_telefonoFijo": "Telefono fijo",
+			"usr_email": "Email",
+			"usr_password": "Contraseña",
+			"usr_direccion": "Dirección",
+			"usr_terminosCondiciones": "Terminos y condiciones",
+			"identificationTypeId": "Tipo de identificación"
+		}
+	},
+	"usersUpPassword": {
+		"allowed": ["usr_password"],
+		"required": {
+			"usr_password": "Password"
+		}
+	},
+	"cuentas": {
+		"allowed": [
+			"TIPO",
+			"CICLCODI",
+			"CODIGO_PPAL",
+			"CUENTACONTRATO",
+			"DIRENVIO",
+			"DIRECCION",
+			"ESTRCODI",
+			"FRECBARR",
+			"FRECRECO",
+			"NOMBRES",
+			"TELEFONO",
+			"UNR",
+			"UR",
+			"userId",
+			"VOLUBASU"
+		],
+		"required": {
+			"TIPO": "Residencia",
+			"CICLCODI": "ciclcodi",
+			"CODIGO_PPAL": "codigo principal",
+			"CUENTACONTRATO": "Cuenta contrato",
+			"DIRENVIO": "Dirección de envio",
+			"DIRECCION": "Dirección del presio",
+			"ESTRCODI": "estrato",
+			"FRECBARR": "frecbarr",
+			"FRECRECO": "frecreco",
+			"NOMBRES": "Nombres",
+			"TELEFONO": "Télefono",
+			"UNR": "UNR",
+			"UR": "UR",
+			"userId": "Usuario",
+			"VOLUBASU": "Volubasu"
+		}
+	}
+}

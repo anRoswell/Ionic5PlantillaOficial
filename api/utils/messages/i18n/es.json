@@ -1,0 +1,54 @@
+{
+	"DB_CONNECTION_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error de conexión con la base de datos"
+	},
+	"DB_QUERY_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error al ejecutar la consulta en la base de datos"
+	},
+	"DB_DUPLICATE": {
+		"TYPE": "error",
+		"MSG": "Ya existe el registro en la base de datos"
+	},
+	"CREATE_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error al crear el registro"
+	},
+	"UPDATE_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error al actualizar el registro"
+	},
+	"DELETE_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error al eliminar el registro"
+	},
+	"ID_NOT_EXISTS": {
+		"TYPE": "error",
+		"MSG": "El id del registro no existe"
+	},
+	"DATA_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error en consulta de registros"
+	},
+	"AUTH_INVALID": {
+		"TYPE": "error",
+		"MSG": "La autenticación del usuario es inválida"
+	},
+	"AUTH_EXPIRED": {
+		"TYPE": "error",
+		"MSG": "La sesión del usuario está vencida, por favor ingrese de nuevo al sistema"
+	},
+	"LOGIN_ERROR": {
+		"TYPE": "error",
+		"MSG": "Error al ingresar al sistema"
+	},
+	"LOGIN_INVALID": {
+		"TYPE": "error",
+		"MSG": "Usuario o contraseña incorrectos"
+	},
+	"TOKEN_REQUIRED": {
+		"TYPE": "error",
+		"MSG": "El token es obligatorio"
+	}
+}

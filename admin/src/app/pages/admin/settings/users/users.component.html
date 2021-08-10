@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-10">
+    <h3><span class="icon icon-user mr-2"></span> Usuarios</h3>
+  </div>
+  <div class="col-2 align-self-end">
+    <a
+      [routerLink]="['/admin/configuraciones/usuario']"
+      class="btn btn-primary btn-block py-2 mb-2"
+    >
+      <span class="icon icon-plus mr-2"></span> Nuevo
+    </a>
+  </div>
+</div>
+<table class="table table-hover shadow">
+  <thead class="table-primary">
+    <tr>
+      <th style="width: 5%;" scope="col">#</th>
+      <th style="width: 45%;" scope="col">Nombre</th>
+      <th style="width: 20%;" scope="col">Profile</th>
+      <th style="width: 10%;" scope="col" class="text-center">Estado</th>
+      <th style="width: 20%;" scope="col" class="text-center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of data">
+      <th scope="row">{{ i.id }}</th>
+      <td>{{ i.name }}</td>
+      <td>{{ i.profileid }}</td>
+      <td class="text-center">
+        <ng-container *ngIf="!i.status">
+          <span class="icon status icon-toggle-left text-danger"></span>
+        </ng-container>
+        <ng-container *ngIf="i.status">
+          <span class="icon status icon-toggle-right text-success"></span>
+        </ng-container>
+      </td>
+      <td class="text-center">
+        <button
+          class="btn btn-success btn-sm mr-1 shadow-none"
+          title="Modificar registro"
+          (click)="goToUser(i)"
+        >
+          <span class="icon icon-edit-3 text-white"></span>
+        </button>
+        <button
+          class="btn btn-danger btn-sm shadow-none"
+          title="Eliminar registro"
+          data-toggle="modal"
+          data-target="#deleteModal"
+          [disabled]="i.disabled"
+          (click)="setUser(i)"
+        >
+          <span class="icon icon-trash-2 text-white"></span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="deleteModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Eliminar perfil</h5>
+      </div>
+      <div class="modal-body">
+        <p *ngIf="user">
+          ¿Está seguro de eliminar el perfil <b>{{ user.name }}</b
+          >?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-warning btn-sm shadow-none"
+          data-dismiss="modal"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-sm shadow-none"
+          data-dismiss="modal"
+          (click)="delete(user.id)"
+        >
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+<nav class="navbar navbar-light bg-light py-0">
+  <span class="navbar-brand mb-0 h1"
+    >Estadisticas App Mobile Aseo Capital Panamá</span
+  >
+</nav>
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats divCard border-left-primary shadow">
+      <div class="card-body bodyCard">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <span class="icon icon-settings iconSize"></span>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Pagos reportados</p>
+              <p class="card-title">7</p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">Update Now</div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats divCard border-left-primary shadow">
+      <div class="card-body bodyCard">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <span class="icon icon-settings iconSize"></span>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Solicitud stickers</p>
+              <p class="card-title">2</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">Update Now</div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats divCard border-left-primary shadow">
+      <div class="card-body bodyCard">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <span class="icon icon-settings iconSize"></span>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Pqrs reportados</p>
+              <p class="card-title">5</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">Update Now</div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats divCard border-left-primary shadow">
+      <div class="card-body bodyCardCss">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <span class="icon icon-settings iconSize"></span>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Capacity reportada</p>
+              <p class="card-title">4</p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">Update Now</div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card divCard shadow" style="padding: 1.5rem">
+      <div>
+        <h3>Reportes de Pago diarios</h3>
+        <p>Hace 24 horas</p>
+      </div>
+      <div id="grafica">
+        <canvas
+          baseChart
+          height="100"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <div class="card divCard shadow" style="padding: 1.5rem">
+      <div class="text-center">
+        <h3>Reportes de Pago diarios</h3>
+        <p>Hace 24 horas</p>
+      </div>
+      <canvas
+        baseChart
+        height="500"
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+        [plugins]="barChartPlugins"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="card divCard shadow" style="padding: 1.5rem">
+      <div class="text-center">
+        <h3>Reportes de Pago diarios</h3>
+        <p>Hace 24 horas</p>
+      </div>
+      <canvas
+        baseChart
+        height="250"
+        [data]="doughnutChartData"
+        [labels]="doughnutChartLabels"
+        [chartType]="doughnutChartType"
+      >
+        >
+      </canvas>
+    </div>
+  </div>
+</div>

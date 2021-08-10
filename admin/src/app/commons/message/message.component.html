@@ -1,0 +1,10 @@
+<ng-container *ngFor="let m of messages; index as i">
+  <p
+    class="app-message {{
+      m.type
+    }} rounded-lg font-weight-light shadow-sm text-center"
+    [ngStyle]="{ top: i * 50 + 'px' }"
+  >
+    {{ m.message }}
+  </p>
+</ng-container>

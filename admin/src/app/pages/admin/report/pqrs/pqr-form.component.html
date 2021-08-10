@@ -1,0 +1,308 @@
+<div class="row justify-content-sm-center">
+  <div class="col-sm-12">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a
+          class="nav-link active"
+          id="nav-home-tab"
+          data-toggle="tab"
+          href="#nav-home"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
+          ><span class="icon icon-message-circle"></span> Gestionar Pqr</a
+        >
+        <a
+          class="nav-link"
+          id="nav-images-tab"
+          data-toggle="tab"
+          href="#nav-images"
+          role="tab"
+          aria-controls="nav-images"
+          aria-selected="false"
+          ><span class="icon icon-message-square"></span>Imagenes.
+          <span class="badge badge-primary">{{ badgesImg }}</span></a
+        >
+        <a
+          class="nav-link"
+          id="nav-profile-tab"
+          data-toggle="tab"
+          href="#nav-profile"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false"
+          ><span class="icon icon-message-square"></span>Rtas. historicos.
+          <span class="badge badge-primary">{{ badgesHistory }}</span></a
+        >
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="nav-home"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab"
+      >
+        <div class="table-responsive mt-3">
+          <div class="card border-0 shadow">
+            <form [formGroup]="form">
+              <!-- <div class="card-header border-0"></div> -->
+              <div class="card-body">
+                <div class="form-row">
+                  <div
+                    class="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+                  >
+                    <label for="formGroupExampleInput">Usuario</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="icon icon-user"></span>
+                        </div>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inlineFormInputGroup"
+                        placeholder="Username"
+                        formControlName="userId"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+                  >
+                    <label for="formGroupExampleInput2">Cuenta</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="icon icon-circle"></span>
+                        </div>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inlineFormInputGroup"
+                        placeholder="Username"
+                        formControlName="cuentaId"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+                  >
+                    <label for="formGroupExampleInput">Pqr seleccionado</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inlineFormInputGroup"
+                        placeholder="Username"
+                        formControlName="opcionespqrId"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+                  >
+                    <label for="formGroupExampleInput">Fecha creación</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="icon icon-calendar"></span>
+                        </div>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inlineFormInputGroup"
+                        placeholder="Username"
+                        formControlName="createdAt"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div
+                    class="form-group col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+                  >
+                    <label for="formGroupExampleInput">Estado</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <span class="icon icon-crosshair"></span>
+                        </div>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inlineFormInputGroup"
+                        placeholder="Estado"
+                        formControlName="description"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div
+                    class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                  >
+                    <label for="formGroupExampleInput2">Observación</label>
+                    <textarea
+                      class="form-control"
+                      formControlName="observacion"
+                      rows="3"
+                    >
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-footer border-0 text-right">
+                <div class="form-row">
+                  <div class="col-12 text-right">
+                    <a
+                      type="button"
+                      class="btn btn-warning m-2"
+                      [routerLink]="['/admin/reportes/pqrs']"
+                    >
+                      <span class="icon icon-corner-up-left"></span>
+                      Regresar
+                    </a>
+                    <button
+                      *ngIf="btStateResponse"
+                      type="submit"
+                      class="btn btn-primary"
+                      (click)="gestionar()"
+                    >
+                      <span class="icon icon-list"></span>
+                      Responder
+                    </button>
+                    <button
+                      *ngIf="stateFinish"
+                      type="submit"
+                      class="btn btn-info ml-2"
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                    >
+                      <span class="icon icon-codepen"></span>
+                      Finalizar Proceso
+                    </button>
+                  </div>
+                </div>
+                <ng-container *ngIf="gestion">
+                  <div class="form-row text-left">
+                    <div
+                      class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                    >
+                      <label for="formGroupExampleInput2">Responder Pqr</label>
+                      <textarea
+                        class="form-control"
+                        formControlName="observation"
+                        placeholder="Ingrese por favor descripción de su respuesta."
+                        rows="4"
+                      >
+                      </textarea>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-12 text-right">
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        (click)="save()"
+                        [disabled]="!form.valid"
+                      >
+                        <span class="icon icon-save"></span>
+                        Guardar
+                      </button>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="nav-images"
+        role="tabpanel"
+        aria-labelledby="nav-images-tab"
+      >
+        <ng-image-slider
+          *ngIf="showSlider"
+          #nav
+          [images]="imageObject"
+          [infinite]="false"
+          [autoSlide]="1"
+          [imageSize]="{ width: '25%', height: 200 }"
+          slideImage="1"
+        ></ng-image-slider>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="nav-profile"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+      >
+        <div
+          class="card mt-3 border-left-primary"
+          *ngFor="let historico of historical"
+        >
+          <div class="card-header">
+            Fecha creacion: <strong>{{ historico.createdAt }}</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              {{ historico.observation }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  tabindex="-1"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar finalizar proceso</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Desea realmente finalizar esta pqr??</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="closeModalButton"
+          data-dismiss="modal"
+        >
+          Cerrar
+        </button>
+        <button type="button" class="btn btn-primary" (click)="finalizar()">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import '~@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+.validationErrorRed {
+	padding: 0px !important;
+	color: rgb(255, 0, 0);
+	background-color: transparent !important;
+}
+
+.linkPersonalize {
+	color: #151e3d;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.btnWhite {
+	--background: rgb(255, 255, 255);
+	--background: -moz-linear-gradient(left, rgba(255, 255, 255) 0%, rgb(255, 255, 255) 44%, rgb(255, 255, 255) 100%);
+	--background: -webkit-gradient(
+		left top,
+		right top,
+		color-stop(0%, rgba(255, 255, 255)),
+		color-stop(44%, rgba(255, 255, 255)),
+		color-stop(100%, rgba(255, 255, 255))
+	);
+	--background: -webkit-linear-gradient(
+		left,
+		rgba(255, 255, 255) 0%,
+		rgba(255, 255, 255) 44%,
+		rgba(255, 255, 255) 100%
+	);
+	--background: -o-linear-gradient(left, rgba(255, 255, 255) 0%, rgba(255, 255, 255) 44%, rgba(255, 255, 255) 100%);
+	--background: -ms-linear-gradient(left, rgba(255, 255, 255) 0%, rgba(255, 255, 255) 44%, rgba(255, 255, 255) 100%);
+	--background: linear-gradient(to right, rgba(255, 255, 255) 0%, rgba(255, 255, 255) 44%, rgba(255, 255, 255) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=1 );
+
+	--color: #ff0000;
+	--border-radius: 20px;
+	--padding: 15px;
+	width: 60%;
+}

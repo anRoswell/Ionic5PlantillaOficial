@@ -1,0 +1,16 @@
+{
+    "allowed": [
+        "name",
+        "url",
+        "icon",
+        "menuId",
+        "order",
+        "status"
+    ],
+    "required": {
+        "name": "Nombre"
+    },
+    "params": {
+        "id": "/^([0-9])*$/"
+    }
+}

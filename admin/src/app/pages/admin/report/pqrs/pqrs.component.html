@@ -1,0 +1,172 @@
+<div class="container">
+  <h5 class="card-title">
+    <span class="icon icon-trello"></span> Listado Pqr's
+  </h5>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a
+        class="nav-link active"
+        id="nav-home-tab"
+        data-toggle="tab"
+        href="#nav-home"
+        role="tab"
+        aria-controls="nav-home"
+        aria-selected="true"
+        >Nuevos <span class="badge badge-primary">{{ badgesNew }}</span>
+      </a>
+      <a
+        class="nav-link"
+        id="nav-profile-tab"
+        data-toggle="tab"
+        href="#nav-profile"
+        role="tab"
+        aria-controls="nav-profile"
+        aria-selected="false"
+        >En proceso
+        <span class="badge badge-primary">{{ badgesInProcess }}</span></a
+      >
+      <a
+        class="nav-link"
+        id="nav-contact-tab"
+        data-toggle="tab"
+        href="#nav-contact"
+        role="tab"
+        aria-controls="nav-contact"
+        aria-selected="false"
+        >Finalizados
+        <span class="badge badge-primary">{{ badgesFinish }}</span></a
+      >
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div
+      class="tab-pane fade show active"
+      id="nav-home"
+      role="tabpanel"
+      aria-labelledby="nav-home-tab"
+    >
+      <div class="table-responsive mt-3">
+        <table class="table row-border table-hover hover shadow">
+          <thead class="thead-dark">
+            <tr>
+              <th style="width: 5%" scope="col">ID</th>
+              <th style="width: 30%" scope="col">Usuario</th>
+              <th style="width: 15%" scope="col">Cuenta</th>
+              <th style="width: 40%" scope="col">Fecha creación</th>
+              <!-- <th style="width: 10%" scope="col">Estado</th> -->
+              <th style="width: 10%" scope="col" class="text-center">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let pqrNew of pqrsNews"
+              class="{{ pqrNew.socket ? 'table-info' : '' }}"
+            >
+              <th scope="row">
+                {{ pqrNew.id }}
+                <span class="badge badge-primary" *ngIf="pqrNew.socket">
+                  {{ pqrNew.socket ? "Nuevo" : "" }}
+                </span>
+              </th>
+              <td>{{ pqrNew.userId }}</td>
+              <td>{{ pqrNew.cuentaId }}</td>
+              <td>{{ pqrNew.createdAt }}</td>
+              <!-- <td>{{ pqrNew.state }}</td> -->
+              <td class="text-center">
+                <button
+                  class="btn btn-success btn-sm mr-1 shadow-none"
+                  title="Modificar registro"
+                  (click)="goToListPqr(pqrNew)"
+                >
+                  <span class="icon icon-edit-3 text-white"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="nav-profile"
+      role="tabpanel"
+      aria-labelledby="nav-profile-tab"
+    >
+      <div class="table-responsive mt-3">
+        <table class="table row-border table-hover hover shadow">
+          <thead class="thead-dark">
+            <tr>
+              <th style="width: 5%" scope="col">ID</th>
+              <th style="width: 30%" scope="col">Usuario</th>
+              <th style="width: 15%" scope="col">Cuenta</th>
+              <th style="width: 40%" scope="col">Fecha creación</th>
+              <!-- <th style="width: 10%" scope="col">Estado</th> -->
+              <th style="width: 10%" scope="col" class="text-center">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pqrInProcess of pqrsInProcess">
+              <th scope="row">{{ pqrInProcess.id }}</th>
+              <td>{{ pqrInProcess.userId }}</td>
+              <td>{{ pqrInProcess.cuentaId }}</td>
+              <td>{{ pqrInProcess.createdAt }}</td>
+              <!-- <td>{{ pqrInProcess.state }}</td> -->
+              <td class="text-center">
+                <button
+                  class="btn btn-success btn-sm mr-1 shadow-none"
+                  title="Modificar registro"
+                  (click)="goToListPqr(pqrInProcess)"
+                >
+                  <span class="icon icon-edit-3 text-white"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="tab-pane fade"
+      id="nav-contact"
+      role="tabpanel"
+      aria-labelledby="nav-contact-tab"
+    >
+      <div class="table-responsive mt-3">
+        <table class="table row-border table-hover hover shadow">
+          <thead class="thead-dark">
+            <th style="width: 5%" scope="col">ID</th>
+            <th style="width: 20%" scope="col">Usuario</th>
+            <th style="width: 15%" scope="col">Cuenta</th>
+            <th style="width: 25%" scope="col">Fecha creación</th>
+            <th style="width: 25%" scope="col">Fecha Finalización</th>
+            <!-- <th style="width: 10%" scope="col">Estado</th> -->
+            <th style="width: 10%" scope="col" class="text-center">Acciones</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pqrFinish of pqrsFinish">
+              <th scope="row">{{ pqrFinish.id }}</th>
+              <td>{{ pqrFinish.userId }}</td>
+              <td>{{ pqrFinish.cuentaId }}</td>
+              <td>{{ pqrFinish.createdAt }}</td>
+              <td>{{ pqrFinish.updatedAt }}</td>
+              <!-- <td>{{ pqrFinish.state }}</td> -->
+              <td class="text-center">
+                <button
+                  class="btn btn-success btn-sm mr-1 shadow-none"
+                  title="Modificar registro"
+                  (click)="goToListPqr(pqrFinish)"
+                >
+                  <span class="icon icon-edit-3 text-white"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

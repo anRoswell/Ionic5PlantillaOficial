@@ -1,0 +1,236 @@
+<div class="row justify-content-sm-center">
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="card border-0 shadow">
+      <form [formGroup]="form">
+        <div class="card-header border-0">
+          <h5 class="card-title mb-0 py-2">
+            <span class="icon icon-user mr-2"></span> {{ title }}
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="name" class="labelClass">Nombre</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-user"></span>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  maxlength="20"
+                  formControlName="name"
+                />
+              </div>
+              <ng-container *ngIf="isValid('name')">
+                <ng-container *ngIf="form.get('name').errors.required">
+                  <small id="emailHelp" class="form-text text-danger">
+                    El nombre es requerido
+                  </small>
+                </ng-container>
+                <ng-container *ngIf="form.get('name').errors.minlength">
+                  <small id="emailHelp" class="form-text text-danger">
+                    La longitud mínima del campo es de 10 caracteres
+                  </small>
+                </ng-container>
+              </ng-container>
+            </div>
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="username" class="labelClass">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-user"></span>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  maxlength="20"
+                  formControlName="username"
+                />
+              </div>
+              <ng-container *ngIf="isValid('username')">
+                <small id="usernameHelp" class="form-text text-danger">
+                  El username es requerido
+                </small>
+              </ng-container>
+            </div>
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="email" class="labelClass">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-mail"></span>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  maxlength="20"
+                  formControlName="email"
+                />
+              </div>
+              <ng-container *ngIf="isValid('email')">
+                <small id="emailHelp" class="form-text text-danger">
+                  El email es requerido
+                </small>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-row" *ngIf="showPass">
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="password" class="labelClass">Password</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-user"></span>
+                  </span>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  maxlength="20"
+                  formControlName="password"
+                />
+              </div>
+              <ng-container *ngIf="isValid('password')">
+                <small id="passwordHelp" class="form-text text-danger">
+                  El password es requerido
+                </small>
+              </ng-container>
+            </div>
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="confirmPassword" class="labelClass"
+                >Confirmar password</label
+              >
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-user"></span>
+                  </span>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  maxlength="20"
+                  formControlName="confirmPassword"
+                />
+              </div>
+              <ng-container
+                *ngIf="form.get('confirmPassword').hasError('ConfirmPassword')"
+              >
+                <small id="confirmPasswordHelp" class="form-text text-danger">
+                  El password y su confirmación no concuerdan, verificar!!!
+                </small>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-row">
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="name" class="labelClass">Mobile</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-smartphone"></span>
+                  </span>
+                </div>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="mobile"
+                  maxlength="20"
+                  formControlName="mobile"
+                />
+              </div>
+              <ng-container *ngIf="isValid('mobile')">
+                <small id="mobileHelp" class="form-text text-danger">
+                  El mobile es requerido
+                </small>
+              </ng-container>
+            </div>
+            <div
+              class="form-group col-12 col-sm-12 col-md-4 .col-lg-4 .col-xl-4"
+            >
+              <label for="profileid" class="labelClass">Perfil</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <span class="icon icon-sliders"></span>
+                  </span>
+                </div>
+                <select
+                  id="inputState"
+                  class="form-control"
+                  formControlName="profileid"
+                >
+                  <option selected>Elegir</option>
+                  <option
+                    *ngFor="let profile of profiles"
+                    value="{{ profile.id }}"
+                    >{{ profile.name }}</option
+                  >
+                </select>
+              </div>
+              <ng-container *ngIf="isValid('profileid')">
+                <small id="profileidHelp" class="form-text text-danger">
+                  El perfil es requerido
+                </small>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="custom-control custom-switch">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="disabled"
+                formControlName="status"
+              />
+              <label class="custom-control-label" for="disabled">
+                Activo
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer border-0 text-right">
+          <a
+            [routerLink]="['/admin/configuraciones/usuarios']"
+            class="btn btn-warning shadow-none mr-2"
+          >
+            <span class="icon icon-corner-up-left mr-2"></span>Regresar
+          </a>
+          <button
+            type="submit"
+            class="btn shadow-none"
+            [ngClass]="{ 'btn-success': id, 'btn-primary': !id }"
+            [disabled]="form.invalid"
+            (click)="save()"
+          >
+            <span class="icon icon-save mr-2"></span> Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<p>{{ form.value | json }}</p>

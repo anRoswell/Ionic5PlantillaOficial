@@ -1,0 +1,158 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Api Rest App Tool Kit Panama en NodeJs. Se necesita un `token` para las consultas",
+		"version": "1.0.0",
+		"title": "AppToolKitPanama NodeJs",
+		"termsOfService": "https://www.syspotec.com/",
+		"contact": {
+			"name": "Syspotec S.A.",
+			"email": "alfonso.navarro@syspotec.com",
+			"url": "https://www.syspotec.com/"
+		},
+		"license": {
+			"name": "NodeJs v12.0",
+			"url": "https://raw.githubusercontent.com/nodejs/node/master/LICENSE"
+		}
+	},
+	"host": "190.143.120.19:8182",
+	"basePath": "/api/v1.0",
+	"tags": [
+		{
+			"name": "users",
+			"description": "Operaciones sobre el usuario",
+			"externalDocs": {
+				"description": "Para saber mas visita",
+				"url": ""
+			}
+		}
+	],
+	"schemes": ["http"],
+	"paths": {
+		"/users": {
+			"get": {
+				"tags": ["users"],
+				"summary": "Lista de usuarios",
+				"operationId": "listUser",
+				"description": "Obtiene la lista de usuarios",
+				"components": {
+					"securitySchemes": {
+						"bearerAuth": {
+							"type": "http",
+							"scheme": "bearer",
+							"bearerFormat": "JWT"
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Consulta exitosa"
+					},
+					"400": {
+						"description": "Invalid ID supplied"
+					},
+					"404": {
+						"description": "No encontrado"
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
+			},
+			"post": {
+				"tags": ["users"],
+				"summary": "Crea un usuario",
+				"description": "Se crea un usuario sin necesidad de logueo.",
+				"operationId": "createUser",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "Usuario creado",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					}
+				],
+				"responses": {
+					"default": {
+						"description": "successful operation"
+					}
+				}
+			}
+		}
+	},
+	"securityDefinitions": {
+		"petstore_auth": {
+			"type": "oauth2",
+			"authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+			"flow": "implicit",
+			"scopes": {
+				"write:pets": "modify pets in your account",
+				"read:pets": "read your pets"
+			}
+		},
+		"api_key": {
+			"type": "apiKey",
+			"name": "api_key",
+			"in": "header"
+		}
+	},
+	"definitions": {
+		"User": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"username": {
+					"type": "string"
+				},
+				"firstName": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
+				"usr_email": {
+					"type": "string"
+				},
+				"usr_password": {
+					"type": "string"
+				},
+				"usr_celular": {
+					"type": "string"
+				},
+				"usr_status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "User Status"
+				}
+			}
+		},
+		"ApiResponse": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"type": {
+					"type": "string"
+				},
+				"message": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"externalDocs": {
+		"description": "Find out more about Swagger",
+		"url": "http://swagger.io"
+	}
+}
